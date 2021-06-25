@@ -1,0 +1,654 @@
+@charset "UTF-8";
+@media all and (min-width : 768px){
+    .PC_ver{
+        display: block;
+    }
+    .mobile_ver{
+        display: none;
+    }
+    /*------------------------font------------------------------*/
+    @font-face{
+        font-family: baskvill;
+        src: url('../font/baskvill.woff') format('woff');
+    }
+    @font-face{
+        font-family: IAMSHERLOCKED;
+        src: url('../font/IAMSHERLOCKED.woff') format('woff');
+    }
+    @font-face{
+        font-family: chosun;
+        src: url('../font/chosun.woff') format('woff');
+    }
+
+
+
+    /*-------------------------초기화------------------------ */
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    ul, li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    body{
+        height: 21000px;
+        font-family: 'baskvill';
+    }
+    body::-webkit-scrollbar {
+        display:none;
+    }
+    
+    section{
+        position: fixed;
+        top: 0;
+        left: 0;
+        perspective: 2500px;
+    }
+    article{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .intro{
+        display: block;
+        background-image: url(../img/intro/bg.png);
+        transition-duration: 3s;
+    }
+    /*-------------------------process bar-------------------------*/
+    #process{
+        width: 0%;
+        height: 15px;
+        background-color: white;
+        position: fixed;
+        bottom: 15px;
+        opacity: 0.5;
+        z-index: 12;
+        overflow: hidden;
+        text-align: right;
+    }
+
+    /*------------------------nav---------------------------*/
+    nav{
+        position: fixed;
+        left: 2.0833%;
+        top: 36.119711%;
+        z-index: 10;
+        display: none;
+    }
+    .side-item{
+        font-family: 'baskvill';
+        font-size: 30px;
+        color: white;
+        margin-bottom: 30px;
+        opacity: 0.3;
+        cursor: pointer;
+    }
+    .side-item:hover,
+    .side-on{
+        opacity: 1;
+        text-decoration: underline;
+    }
+
+    /*-----------------------icon------------------------------*/
+    .icon-wrap{
+        width: 100px;
+        height: 80px;
+        position: fixed;
+        bottom: 60px;
+        left: 47.7604166%;
+        z-index: 10;
+        color: white;
+        opacity: 0.5;
+    }
+    .icon{
+        width: 77px;
+        height: 46px;
+        animation-name: iconBounce;
+        animation-duration: 0.4s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        position: relative;
+    }
+    .icon-txt{
+        width: 100px;
+        text-align: center;
+        font-size: 20px;        
+        transform: translateX(-10px);
+    }
+    @keyframes iconBounce{
+        from{
+            top: -5px;
+        }
+        to{
+            top: -15px;
+        }
+    }
+
+
+
+    /* --------------------------------door-------------------*/
+    #door{
+        width: 18.958333%;
+        height: 70.794633%;
+        position: absolute;
+        top: 23.219814%;
+        left: 39.5%;
+        transform-style: preserve-3d;
+        transform-origin: right;
+        transform: rotateY(0deg);
+    }
+    .door-item{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .front{
+        transform: translateZ(15px);
+    }
+    .back{
+        transform: translateZ(-15px);
+    }
+    .door-side{
+        position: absolute;
+        width: 30px;
+        height: 100%;
+        background-color: #0f1014;
+    }
+    .left{
+        transform: translateX(-8px) rotateY(90deg) rotateZ(0.2deg);
+    }
+
+
+
+
+    /* -------------------------fog-------------------------- */
+    .fog{
+        background-color: #101318;
+        transform-style: preserve-3d;
+    }
+    .fog-item{
+        opacity: 0.3;
+        position: absolute;
+        z-index: 8;
+    }
+
+
+
+
+    /* -------------------------Intro-text---------------------------*/
+    .text-wrap{
+        font-size: 100px;
+        font-weight: 900;
+        color: white;
+        position: absolute;
+        top: 39.2156862745098%;
+        left: 23.4375%;
+        font-family: 'IAMSHERLOCKED';
+    }
+    .intro-item{
+        position: relative;
+        left: -1000px;
+        transition-duration: 0.5s;
+    }
+    .intro-item-after{
+        left: 0;
+    }
+    .text-hide{
+        float: left;
+        margin-left: 40px;
+        overflow: hidden;
+    }
+    .text-hide:nth-child(4){
+        margin-left: 150px;
+    }
+
+
+
+
+    /* ----------------------wallpaper -------------------------------*/
+    .wallpaper{
+        background-image: url(../img/wallpaper/wall-bg.png);
+        z-index: 9;
+    }
+    .board-wrap{
+        width: 1151px;
+        height: 78.12177503vh;
+        position: absolute;
+        z-index: 10;
+        left: 120.3125%;
+        top: 11.3003%;
+        transition-duration: 1s;
+    }
+
+
+
+    /*---------------------resume--------------------------------*/
+    .resume-wrap{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(0,0,0,0.75);
+        z-index: 11;
+        display: none;
+    }
+    #resume{
+        width: 554px;
+        height: 90.60887513vh;
+        position: absolute;
+        left: 35.57292%;
+        top: -100%;
+        color: #333333;
+        transition-duration: 1s;
+    }
+    .resume-out-wrap{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .resume-in-wrap{
+        margin-top: 5.694761%;
+        margin-left: 5.415162%;
+    }
+    .resume-in-wrap:first-child{
+        margin-top: 28%;
+        margin-left: 42.12635%;
+    }
+    .resume-con-title{
+        font-size: 30px;
+    }
+    .resume-con-wrap{
+        border-left: 2px solid #333333;
+        padding-left: 10px;
+        margin-top: 5px;
+    }
+    .resume-con{
+        font-size: 17px;
+        font-family: 'chosun';
+    }
+
+
+
+
+    /*--------------------------skill---------------------------*/
+    #skill-wrap{
+        width: 71.875%;
+        height: 74.30341%;
+        position: absolute;
+        left: 14.0625%;
+        top: -100%;
+        color: white;
+        transition-duration: 1s;
+    }
+
+    .skill-title{
+        text-align: center;
+        font-size: 70px;
+    }
+    .skill-pic{
+        width: 318px;
+        height: 58.33333%;
+        position: absolute;
+        left: 38.47826%;
+        top: 20.833333%;
+    }
+    .skill-text-wrap{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .skill-text{
+        position: absolute;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+    }
+    .skill-text:hover{
+        color: red;
+    }
+    .skill-text:first-child{
+        top: 36.11111%;
+        left: 14.49275%;
+        font-size: 27px;
+    }
+    .skill-text:nth-child(2){
+        top: 50.69444%;
+        left: 0%;
+        font-size: 45px;
+    }
+    .skill-text:nth-child(3){
+        top: 36.11111%;
+        right: 18.47826%;
+        font-size: 45px;
+    }
+    .skill-text:nth-child(4){
+        top: 47.22222%;
+        right: 0px;
+        font-size: 75px;
+    }
+    .skill-text:last-child{
+        top: 68.05556%;
+        right: 19.92754%;
+        font-size: 50px;
+    }
+
+
+
+
+    /*----------------------------line effect------------------------------*/
+    .line{
+        height: 100%;
+        position: absolute;
+        transition-duration: 1s;
+        z-index: 10;
+    }
+
+    #line-left{
+        width: 130.2083%;
+        left: -130.2083%;
+    }
+    #line-right{
+        width: 120.3125%;
+        right: -120.3125%;
+    }
+
+
+
+
+
+    /* ------------------------cement---------------------------------- */
+    .portfolio{
+        background-image: url(../img/cement/cement-bg.png);
+    }
+    .portfolio-darken{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 8;
+    }
+    .portfolio-title{
+        text-align: center;
+        color: white;
+        font-size: 70px;
+        margin-bottom: 60px;
+    }
+    .portfolio-in-wrap{
+        width: 66.92708333%;
+        height: 80.49535604%;
+        margin: 3.095975232% auto;
+        display: none;
+        z-index: 9;
+    }
+    .portfolio-item-wrap{
+        width: 29.18288%;
+        height: 34.61538462%;
+        min-height: 240px;
+        background-color: #ebebeb;
+        position: relative;
+        text-align: center;
+        float: left;
+        margin-right: 6.225681%;
+        margin-bottom: 8.38390093%;
+        transition-duration: 1s;
+        box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.4);
+    }
+    .portfolio-item-wrap:nth-child(4),
+    .portfolio-item-wrap:nth-child(7){
+        margin-right: 0;
+    }
+    .portfolio-clip{
+        width: 92%;
+        height: 64.81484%;
+        background-color: #231f1e;
+        position: absolute;
+        left: 4%;
+        top: 7.407407%;
+        overflow: hidden;
+    }
+    .portfolio-tape{
+        position: absolute;
+        width: 54.933333%;
+        height: 14.81481%;
+    }
+    .portfolio-img{
+        display: block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        transition-duration: 10s;
+    }
+    .portfolio-text{
+        position: relative;
+        top: 78%;
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 25px;
+        line-height: 20px;
+    }
+    .portfolio-icon-wrap{
+        width: auto;
+        height: 30px;
+        top: -35px;
+        right: 10px;
+        position: absolute;
+        display: none;
+        z-index: 10;
+    }
+    .portfolio-icon-wrap.active{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;        
+    }
+    .icon-box{
+        height: auto;
+        position: relative;
+        text-align: left;
+        margin-right: 5px;
+    }
+    .labtop-icon{
+        width: 45px;
+    }
+    .desktop-icon{
+        width: 60px;
+    }
+    .tablet-icon{
+        width: 20px;
+    }
+    .mobile-icon{
+        width: 9px;
+    }
+    .icon-box>img{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+    }
+
+
+
+
+    /*---------------------------picture position--------------------------*/
+    .portfolio-item-wrap:nth-child(2){transform: rotateZ(-11deg)}
+    .portfolio-item-wrap:nth-child(2)>.portfolio-tape{
+        right: -24%;
+        transform: rotateZ(45deg);
+    }
+    .portfolio-item-wrap:nth-child(3)>.portfolio-tape{
+        left: 22.66667%;
+        top: -9.25926%;
+    }
+    .portfolio-item-wrap:nth-child(4){transform: rotateZ(11deg)}
+    .portfolio-item-wrap:nth-child(4)>.portfolio-tape,
+    .portfolio-item-wrap:nth-child(5)>.portfolio-tape{
+        transform: rotateZ(-50deg);
+        left: -26.666667%;
+    }
+    .portfolio-item-wrap:nth-child(5){transform: rotateZ(11deg)}
+    .portfolio-item-wrap:nth-child(7){transform: rotateZ(-11deg)}
+    .portfolio-item-wrap:nth-child(6){transform: rotateZ(5deg)}
+    .portfolio-item-wrap:nth-child(6)>.portfolio-tape{
+        transform: rotateZ(-30deg);
+        top: -7.40741%;
+        left: -18.66667%;
+    }
+    .portfolio-item-wrap:nth-child(7)>.portfolio-tape{
+        right: -24%;
+        top: -3.7037%;
+        transform: rotateZ(45deg);
+    }
+    .portfolio-item-wrap.portfolio-on{
+        transform: rotateZ(0deg) scale(1.5);
+        z-index: 11;
+    }
+
+
+
+
+
+    /*----------------------------contact--------------------------------------*/
+    .contact{
+        display: none;
+        text-align: center;
+        color: white;
+        margin-top: 250px;
+    }
+    .contact-title{
+        font-size: 45px;
+        text-decoration: underline;
+    }
+    .contact-bg{
+        margin: 0 auto;
+        margin-top: 75px;
+        width: 66.14583333%;
+        height: 150px;
+        background-image: url(../img/portfolio/contact.png);
+        background-repeat: no-repeat;
+        color: #333333;
+        font-size: 35px;
+        line-height: 100px;
+    }
+    .contact-text{
+        margin-right: 50px;
+    }
+    .contact-text:last-child{
+        margin-right: 0;
+    }
+    .contact-text:hover{
+        color: red;
+    }
+    .return-button{
+        position: relative;
+        margin-top: 75px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    .return-button:hover{
+        color: red;
+    }
+    #return-but{
+        width: 33px;
+        height: 26px;
+        animation-name: iconBounce;
+        animation-duration: 0.4s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        position: relative;
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (min-width: 960px) and (max-width : 1400px){
+    .board-wrap{
+        width: 850px;
+        height: 78.12177503vh;
+    }
+    #resume{
+        width: 450px;
+        height: 80vh;
+    }
+    .resume-con{
+        font-size: 15px;
+    }
+    .text-hide{
+        font-size: 70px;
+    }
+    .skill-pic{
+        width: 250px;
+        height: auto;
+    }
+    .skill-text:first-child{
+        font-size: 20px;
+    }
+    .skill-text:nth-child(2){
+        font-size: 35px;
+    }
+    .skill-text:nth-child(3){
+        font-size: 35px;
+    }
+    .skill-text:nth-child(4){
+        font-size: 55px;
+    }
+    .skill-text:last-child{
+        font-size: 30px;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width : 959px){
+    .board-wrap{
+        width: 680px;
+        height: 78.12177503vh;
+    }
+    #resume{
+        width: 450px;
+        height: 80vh;
+    }
+    .resume-con{
+        font-size: 15px;
+    }
+    .text-hide{
+        font-size: 60px;
+    }
+    .skill-pic{
+        width: 250px;
+        height: auto;
+    }
+    .skill-text:first-child{
+        font-size: 20px;
+    }
+    .skill-text:nth-child(2){
+        font-size: 30px;
+    }
+    .skill-text:nth-child(3){
+        font-size: 30px;
+    }
+    .skill-text:nth-child(4){
+        font-size: 45px;
+    }
+    .skill-text:last-child{
+        font-size: 27.5px;
+    }
+}
